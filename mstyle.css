@@ -1,0 +1,105 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap'); 
+
+p {
+    color: rgb(213, 213, 213); 
+    font-size: 30px; 
+    text-align: center; 
+    font-weight: 400; 
+}
+
+body, html {
+    overflow-x: hidden; 
+}
+
+body {
+    margin: 0px; 
+    padding: 0px; 
+    background: #0a0021; 
+    padding-left: 10vw; 
+    padding-right: 10vw; 
+    font-family: "Libre Caslon Text", serif;
+}
+
+h2 {
+    color: rgb(236, 236, 236); 
+    font-size: 50px; 
+    font-weight: 400; 
+    margin-top: 70px; 
+}
+
+h3 {
+    color: rgb(143, 218, 241); 
+    font-size: 25px; 
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 300; 
+    margin-bottom: 10px; 
+}
+
+h4 {
+    color: rgb(185, 185, 185); 
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 300; 
+    text-align: center; 
+    font-size: 25px; 
+}
+
+img {
+    max-width: 80vw;
+    width: 80vw;
+    margin-bottom: 30px; 
+}
+
+.grid {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 5px; 
+    max-width: 80vw; 
+}
+
+.grid img {
+    max-width: 100%; 
+    width: 100%; 
+    margin-bottom: 0px; 
+}
+
+.start {
+    height: 100vh; 
+    padding-top: 10vh; 
+    box-sizing: border-box; 
+}
+
+.bigger {
+    max-width: 250vw;
+    width: 250vw !important;
+    margin-left: -50vw;
+    margin-top: -20vw; 
+    margin-bottom: -25vw; 
+    animation: 30s linear infinite spin;
+}
+
+
+.blink { 
+    opacity: 0; 
+    animation-delay: 3s;
+    animation: 3s ease-in 1s infinite blink; 
+}
+
+@keyframes blink {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1; 
+    }
+  }
+
+
+@keyframes spin { 
+    from { 
+        transform: rotate(0deg); 
+    } to { 
+        transform: rotate(360deg); 
+    }
+}
