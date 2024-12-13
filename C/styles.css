@@ -69,6 +69,8 @@ section {
 
 .blue_background {
     background: #8BA4BF; 
+    padding-bottom: 60px !important;
+    padding-top: 50px;  
 }
 
 /* menu */ 
@@ -364,4 +366,153 @@ nav ul li .contact:hover {
     margin-bottom: 10px; 
     width: 100%; 
     text-align: right; 
+  }
+
+  /* testimonial section */ 
+
+  .testimonials {
+    background-color: #f9f9f9; /* Light background */
+    padding: 50px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .client2 {
+    text-align: center; 
+    margin-bottom: 30px;
+    width: 100%; 
+    color: white; 
+  }
+
+  .testimonial-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+  }
+
+  .testimonial {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+      padding: 20px;
+      width: 300px;
+      margin: 10px;
+  }
+
+  .quote {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 15px;
+  }
+
+  .client {
+      font-weight: bold;
+      color: #333;
+  }
+
+  /* footer */ 
+  footer {
+    text-align: center; 
+    width: 100vw; 
+    padding-bottom: 20px;
+    padding-top: 20px; 
+  }
+
+  .desktop_remove {
+    display: none; 
+  }
+
+  @media (max-width: 800px) {
+
+    header {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      padding-top: 20px;
+      padding-bottom: 20px;  
+    }
+
+    h1 {
+      font-family: 'Cantarell', sans-serif;
+      font-weight: 100;
+      font-size: 4vw;
+      display: inline;
+      padding-left: 5vw; 
+    }
+
+    nav ul li {
+      display: inline;
+      text-decoration: none;
+      padding-right: 2vw;
+      font-family: 'Cantarell', sans-serif;
+    }
+
+    .contact {
+      background: #E17A00;
+      color: white;
+      padding: 8px;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-radius: 50px;
+      font-size: 3vw;
+    }
+
+    .desktop_remove {
+      display: block;
+    }
+
+    .mobile_remove {
+      display: none; 
+    }
+
+    .mobile_hero {
+      width: 100vw; 
+      padding: 0px; 
+    }
+
+    .mobile_img {
+      width: 100vw; 
+    }
+
+    .photo_grid {
+      display: block; 
+    }
+
+    .photo_grid2 {
+      display: none; 
+    }
+
+    .img_crop {
+      overflow: visible;
+      position: relative;
+    }
+
+    .img_crop img {
+      width: auto;
+      height: auto;
+      min-width: 100%;
+      min-height: 100%;
+      position: relative;
+      margin-top: 10px; 
+    }
+    
+    h2 {
+      font-family: 'Lexend Deca', sans-serif;
+      font-weight: 400;
+      font-size: 7vw;
+    }
+
+    .learnmore {
+      float: right;
+      padding-top: 30px;
+      font-size: 5.5vw;
+      font-weight: 400;
+      color: black !important; 
+    }
+
+    .b {
+      margin-top: 20px;
+      padding-bottom: 80px;
+    }
+    
   }
