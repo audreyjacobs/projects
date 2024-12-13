@@ -411,6 +411,33 @@ nav ul li .contact:hover {
       color: #333;
   }
 
+  /* get in touch */ 
+
+  .contact_info {
+    position: relative; 
+    border-bottom: 2px solid gray; 
+  }
+
+  .contact_info p {
+    font-size: 2vw; 
+    padding-top: 10px; 
+  }
+
+  .logo_side {
+    position: absolute; 
+    right: 3rem;
+    bottom: 60px;  
+  }
+
+  #logo2 {
+    width: 10vw; 
+    max-width: 10vw; 
+    position: absolute; 
+    top: 0; 
+    right: 3rem; 
+  }
+
+
   /* footer */ 
   footer {
     text-align: center; 
@@ -519,4 +546,34 @@ nav ul li .contact:hover {
       padding-left: 1rem; 
       padding-right: 1rem; 
     }
+
+     /* get in touch */ 
+
+    .contact_info {
+      position: relative; 
+      border-bottom: 2px solid gray; 
+      min-height: 40vh;  
+      text-align: center; 
+    }
+
+    .contact_info p {
+      font-size: 5vw; 
+      padding-top: 10px; 
+    }
+
+    .logo_side {
+      position: absolute;
+      left: 0; 
+      right: 0;   
+      bottom: 35px; 
+    }
+
+    #logo2 {
+      width: 25vw; 
+      max-width: 25vw; 
+      position: absolute;
+      top: 20vh; 
+      left: 35%;   
+    }
+
   }
