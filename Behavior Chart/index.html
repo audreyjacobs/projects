@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behavior Chart</title>
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link href="styles.css" rel="stylesheet">  
+</head>
+<body>
+    <div>
+        <h1> Roster Behavior Chart </h1>
+    </div>
+    <div class="chart">
+        <img src="images/5.png">
+        <img src="images/4.png">
+        <img src="images/2.png">
+        <img src="images/1.png">
+        <img src="images/3.png"> 
+    </div>
+      
+      <div id="grid">
+        <div class="column c1" data-column="0"></div>
+        <div class="column c2" data-column="1"></div>
+        <div class="column c3" data-column="2"></div>
+        <div class="column c4" data-column="3"></div>
+        <div class="column c5" data-column="4"></div>
+      </div>
+
+      <form id="addForm">
+        <input type="text" id="newItemText" placeholder="Enter text" required>
+        <button type="submit">Add New Player</button>
+      </form>
+      
+      <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
+      <script>
+        // ====== Firebase Setup ======
+        const firebaseConfig = {
+          apiKey: "AIzaSyCCqBV0Y5skN3W7H3leex9p4CvQIoqdLJE",
+          authDomain: "bekah-s-roster.firebaseapp.com",
+          databaseURL: "https://bekah-s-roster-default-rtdb.firebaseio.com",
+          projectId: "bekah-s-roster",
+          storageBucket: "bekah-s-roster.appspot.com",
+          messagingSenderId: "115134763139",
+          appId: "1:115134763139:web:4a57ad54ad6de9ad498bb6"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+      
+        const grid = document.getElementById('grid');
+        const addForm = document.getElementById('addForm');
+        const newItemText = document.getElementById('newItemText');
+      
+        // ====== Drag & Drop ======
+        let draggedItem = null;
+      
+        function createItemElement(id, text) {
+            const div = document.createElement('div');
+            div.className = 'item';
+            div.textContent = text;
+            div.draggable = true;
+            div.dataset.id = id;
+
+            // Drag events
+            div.addEventListener('dragstart', e => {
+                draggedItem = div;
+            });
+            div.addEventListener('dragend', e => {
+                draggedItem = null;
+            });
+
+            // Delete button
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = '✖';
+            deleteBtn.style.float = 'right';
+            deleteBtn.style.background = 'transparent';
+            deleteBtn.style.border = 'none';
+            deleteBtn.style.color = 'white';
+            deleteBtn.style.cursor = 'pointer';
+            deleteBtn.style.fontWeight = 'bold';
+            deleteBtn.addEventListener('click', e => {
+                e.stopPropagation(); // prevent triggering drag
+                db.ref('items/' + id).remove();
+            });
+
+            div.appendChild(deleteBtn);
+            return div;
+        }
+      
+        const columns = document.querySelectorAll('.column');
+        columns.forEach(col => {
+          col.addEventListener('dragover', e => e.preventDefault());
+          col.addEventListener('drop', e => {
+            e.preventDefault();
+            if(draggedItem && draggedItem.parentElement !== col){
+              col.appendChild(draggedItem);
+              const id = draggedItem.dataset.id;
+              const newColumn = col.dataset.column;
+              db.ref('items/' + id).update({ column: newColumn });
+            }
+          });
+        });
+      
+        // ====== Add New Item ======
+        addForm.addEventListener('submit', e => {
+          e.preventDefault();
+          const text = newItemText.value.trim();
+          if(text === '') return;
+      
+          const newItemRef = db.ref('items').push();
+          newItemRef.set({ text: text, column: "1" }); // column 2 (index 1)
+          newItemText.value = '';
+        });
+      
+        // ====== Load Items from Firebase ======
+        db.ref('items').on('value', snapshot => {
+          const items = snapshot.val();
+          columns.forEach(col => col.innerHTML = '');
+          for(let id in items){
+            const item = items[id];
+            const el = createItemElement(id, item.text);
+            columns[item.column].appendChild(el);
+          }
+        });
+      
+      </script>
+
+</body>
+</html>
