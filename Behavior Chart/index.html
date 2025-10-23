@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Behavior Chart</title>
-    <script src="script.js" defer></script>
+    <!-- <script src="script.js" defer></script> --> 
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link href="styles.css" rel="stylesheet">  
 </head>
@@ -111,7 +111,7 @@
           if(text === '') return;
       
           const newItemRef = db.ref('items').push();
-          newItemRef.set({ text: text, column: "1" }); // column 2 (index 1)
+          newItemRef.set({ text: text, column: 1 }); // column 2 (index 1)
           newItemText.value = '';
         });
       
@@ -122,7 +122,7 @@
           for(let id in items){
             const item = items[id];
             const el = createItemElement(id, item.text);
-            columns[item.column].appendChild(el);
+            columns[Number(item.column)].appendChild(el);
           }
         });
       
