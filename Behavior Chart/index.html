@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Behavior Chart</title>
-    <!-- <script src="script.js" defer></script> --> 
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link href="styles.css" rel="stylesheet">  
 </head>
@@ -36,8 +35,8 @@
       <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
       <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
       <script>
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
 
-        window.onload = function() {
         // ====== Firebase Setup ======
         const firebaseConfig = {
           apiKey: "AIzaSyCCqBV0Y5skN3W7H3leex9p4CvQIoqdLJE",
@@ -127,7 +126,6 @@
             columns[Number(item.column)].appendChild(el);
           }
         });
-        };
       
       </script>
 
