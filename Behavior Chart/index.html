@@ -34,6 +34,8 @@
         <input type="text" id="newItemText" placeholder="Enter text" required>
         <button type="submit">Add New Player</button>
       </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
       
     <!-- Modular Firebase v12 -->
     <script type="module">
@@ -139,6 +141,24 @@
             const el = createItemElement(id, item.text, item.column);
             if (columns[item.column]) columns[item.column].appendChild(el);
           }
+        });
+
+        columns.forEach(col => {
+            new Sortable(col, {
+            group: 'shared', // allows drag between columns
+            animation: 150,
+            onEnd: (evt) => {
+                const item = evt.item;
+                const newColumn = Number(evt.to.dataset.column);
+                const id = item.dataset.id;
+                // Update Firebase
+                update(ref(db, 'items/' + id), { column: newColumn, color: columnColors[newColumn] });
+                // Update color/style
+                item.style.backgroundColor = columnColors[newColumn];
+                item.style.color = newColumn === 1 ? "black" : "white";
+                item.querySelector('button').style.color = item.style.color;
+            }
+            });
         });
       
       </script>
