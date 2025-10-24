@@ -36,6 +36,8 @@
       <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
       <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
       <script>
+
+        window.onload = function() {
         // ====== Firebase Setup ======
         const firebaseConfig = {
           apiKey: "AIzaSyCCqBV0Y5skN3W7H3leex9p4CvQIoqdLJE",
@@ -125,6 +127,7 @@
             columns[Number(item.column)].appendChild(el);
           }
         });
+        };
       
       </script>
 
