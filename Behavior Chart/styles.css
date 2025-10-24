@@ -111,7 +111,9 @@ input {
         max-width: 50vw; 
     }
     .column {
-        min-height: 57.8vw; 
+        min-height: 57.9vw;
+        height: 57.9vw; 
+        max-height: 57.9vw;  
         max-width: 50vw; 
     }
 
@@ -126,5 +128,29 @@ input {
         max-width: 50vw; 
     }
 
+    .item {
+        font-size: 20px; 
+    }
+
+    button {
+        border-radius: 50%;
+        border: none;
+        padding: 5px; 
+        margin-left: 10px;
+        color: black; 
+    }
+
+    #addForm button {
+        color: black; 
+        display: block; 
+        margin-top: 15px; 
+        margin-bottom: 40px; 
+        text-align: center; 
+        margin: auto; 
+    }
+
+    input { 
+        margin-bottom: 15px; 
+    }
 
 }
