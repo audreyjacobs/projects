@@ -11,6 +11,8 @@
     <div>
         <h1> Roster Behavior Chart </h1>
     </div>
+
+    <div class="mobile_grid">
     <div class="chart">
         <img src="images/5.png">
         <img src="images/4.png">
@@ -26,6 +28,7 @@
         <div class="column c4" data-column="3"></div>
         <div class="column c5" data-column="4"></div>
       </div>
+    </div>
 
       <form id="addForm">
         <input type="text" id="newItemText" placeholder="Enter text" required>
@@ -57,7 +60,7 @@
         const newItemText = document.getElementById('newItemText');
       
         // Updated column colors
-        const columnColors = ["green", "yellow", "darkorange", "#D2B48C", "red"];
+        const columnColors = ["green", "yellow", "darkorange", "#804e36", "red"];
       
         let draggedItem = null;
       
@@ -80,7 +83,7 @@
           // Delete button
           const deleteBtn = document.createElement('button');
           deleteBtn.textContent = '✖';
-          deleteBtn.style.color = div.style.color; // match text color
+          deleteBtn.style.color = "black"; // match text color
           deleteBtn.addEventListener('click', e => {
             e.stopPropagation();
             remove(ref(db, 'items/' + id));
