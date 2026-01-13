@@ -1,0 +1,258 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* CSS Reset */
+
+html, body {
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden; 
+}
+
+p {
+    padding: 0px; 
+    margin: 0px; 
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0px; 
+}
+
+img {
+    max-width: 100vw; 
+}
+
+body {
+    background-image: url(images/red-gradient.png);
+    background-repeat: no-repeat, fill;
+    background-color: rgb(66, 23, 29); 
+    max-width: 100vw; 
+    background-size: cover; 
+}
+
+.header {
+    width: 86vw; 
+    position: sticky; 
+    display: grid; 
+    grid-template-columns: 65% 35%; 
+    margin-left: 7vw; 
+    padding-bottom: 5vh; 
+    margin-top: 6vw; 
+    align-items: center; 
+    box-sizing: border-box;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: 'Kantumruy Pro', sans-serif; 
+    color: #C897AD; 
+    font-size: 5.3vw;
+    font-weight: 600; 
+    align-items: center; 
+}
+
+.button {
+    width: fit-content; 
+    border-radius: 50px; 
+    padding: 10px; 
+    padding-left: 15px; 
+    padding-right: 15px; 
+}
+
+.button p {
+    font-family: 'Kantumruy Pro', sans-serif; 
+    font-weight: 600; 
+    display: inline; 
+}
+
+.button img {
+    display: inline; 
+    max-width: 12px;
+    padding-right: 5px;  
+    padding-top: 1px; 
+}
+
+.red {
+    background: #48071E; 
+    color: white; 
+    width: 23vw; 
+    margin-left: 4px; 
+}
+
+.blue {
+    background: #A2CFF7; 
+    color: #2A1C4F; 
+    font-size: 5vw; 
+    padding-left: 12vw; 
+    padding-right: 12vw;
+    padding-bottom: 12px; 
+    text-align: center; 
+    margin: auto;  
+    margin-bottom: 10vw; 
+}
+
+.blue p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600; 
+}
+
+h2 {
+    font-family: 'Kantumruy Pro', sans-serif; 
+    font-weight: 400; 
+    color: white; 
+    font-size: 9.5vw; 
+    padding-left: 7vw; 
+    padding-right: 7vw; 
+}
+
+.location {
+    margin-left: 7vw; 
+    margin-top: 15px; 
+    display: grid; 
+    grid-template-columns: max-content max-content; 
+    align-items: center; 
+    margin-bottom: 10vh; 
+    position: relative; 
+}
+
+.location img {
+    max-width: 15px; 
+    display: inline; 
+}
+
+.location p {
+    color: #C897AD; 
+    display: inline; 
+    padding-top: 2px; 
+    padding-left: 7px; 
+    font-size: 1.1em; 
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+#portrait {
+    max-width: 35vw; 
+    width: 35vw; 
+    position: absolute; 
+    top: 15px; 
+    right: 14vw; 
+}
+
+.services_section {
+    width: 100vw;
+    box-sizing: border-box;  
+    margin-right: 7vw;
+    margin-left: -7vw; 
+    padding: 15px; 
+    padding-left: 10vw; 
+    background: #63699e85; 
+    color: white; 
+    border-radius: 10px; 
+    font-size: 5vw; 
+    margin-bottom: 4vw;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-family: 'Kantumruy Pro', sans-serif; 
+    font-weight: 500;
+    padding-left: 5vw; 
+    font-size: 1.3em; 
+    padding-top: 14px; 
+    padding-bottom: 10px; 
+}
+
+ul {
+    margin-top: 0; 
+}
+
+ul li {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400; 
+    font-size: 4.5vw; 
+    line-height: 160%; 
+    opacity: 0.7; 
+}
+
+.reviews {
+    width: 250vw; 
+    margin-left: -71vw;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+   
+}
+
+.box {
+    width: 75vw;
+    box-sizing: border-box;  
+    padding: 20px; 
+    background: #6B1E38; 
+    color: white; 
+    border-radius: 10px; 
+    font-size: 5vw; 
+    margin-bottom: 6vw;
+    text-align: center; 
+}
+
+.box p {
+    font-family: 'Kantumruy Pro', sans-serif; 
+    font-weight: 300;
+    font-size: 24px; 
+    line-height: 27px; 
+    opacity: 0.8; 
+    padding-bottom: 10px; 
+}
+
+.box img {
+    max-width: 35vw;
+    margin: auto; 
+    display: inline-block;
+    text-align: center;  
+    margin-bottom: 10px; 
+    margin-top: 13px;  
+}
+
+.masonry {
+    max-width: 86vw; 
+    margin-left: 7vw; 
+    column-count: 2;
+    column-gap: 16px;
+    margin-top: 6vh; 
+    padding-bottom: 15px; 
+}
+
+.masonry img {
+  width: 100%;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.footer {
+    text-align: center; 
+    color: white; 
+    border-top: 1px solid white; 
+    padding-top:5vh; 
+    padding-bottom: 4vh; 
+}
+
+.p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 5.5vw; 
+    padding-bottom: 8px; 
+}
+
+.blue_text {
+    color: #A3D1F9;
+    font-family: 'Kantumruy Pro', sans-serif; 
+    text-transform: uppercase; 
+    font-weight: 600; 
+    font-size: 2.8em; 
+    line-height: 1em; 
+    max-width: 50vw; 
+    margin: auto;  
+    padding-bottom: 20px; 
+}
+
+.logo {
+    margin-bottom: 7vh; 
+    margin-top: 3vh; 
+}
